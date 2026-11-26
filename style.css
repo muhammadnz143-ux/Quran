@@ -17,3 +17,8 @@ main{width:100%;max-width:none;flex:1;min-height:0;padding:0;gap:0;display:flex;
 
 /* Keep zoom and revision controls on a single compact row. */
 .quick-track{flex-wrap:nowrap;gap:3px;justify-content:center;overflow-x:auto}.quick-quarters,.zoom-controls{display:flex;gap:3px;flex:none}.quick-track button{flex:none;min-width:30px;padding:4px 5px}.zoom-controls button{min-width:32px;font-size:16px}.quick-quarters button{padding:4px 5px}@media(max-width:380px){.quick-track{gap:2px;padding:3px 2px}.quick-quarters,.zoom-controls{gap:2px}.quick-track button{min-width:26px;padding:4px 3px;font-size:11px}.zoom-controls button{font-size:15px}}
+
+/* Compact account controls: no additional reader toolbar. */
+.top nav{min-width:0;overflow-x:auto;scrollbar-width:none;align-items:center}.top nav::-webkit-scrollbar{display:none}.top .brand{flex:none}#accountBtn{font-weight:600}#accountBtn[data-cloud="ok"]{background:#d9f1db;color:#214d3c;border-color:#d9f1db}#accountBtn[data-cloud="warn"]{color:#ffe4a0} .account-actions{display:grid;gap:8px;margin:12px 0}.account-actions button{white-space:normal;text-align:center}#cloudIdentity{overflow-wrap:anywhere;color:var(--deep);font-weight:600}#cloudStatus{overflow-wrap:anywhere} @media(max-width:420px){.top{gap:3px}.top nav{gap:3px}.top nav button{padding:5px 4px;min-height:34px}.brand strong{font-size:15px}#accountBtn{font-size:10px}}
+
+.top nav{margin-left:auto}.top>#accountBtn{flex:none;background:#ffffff12;color:white;border-color:#ffffff50;padding:7px 8px;font-size:12px;min-height:38px}.top>#accountBtn[data-cloud="ok"]{background:#d9f1db;color:#214d3c}.top>#accountBtn[data-cloud="warn"]{color:#ffe4a0}@media(max-width:420px){.top>#accountBtn{font-size:11px;padding:5px 4px;min-height:34px}}

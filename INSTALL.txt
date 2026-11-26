@@ -1,0 +1,16 @@
+MY HIFZ — GOOGLE SIGN-IN AND FIRESTORE SYNC
+
+1. On the current website, open Juz library and choose Download backup. Do this on each device that has existing records.
+2. In GitHub Desktop, open the existing Quran repository in Explorer (Repository > Show in Explorer). Find the folder containing index.html, app.js, style.css and pages.js.
+3. Copy index.html, app.js, style.css and firebase-sync.js from this ZIP into that exact folder. Replace the first three files when asked. Do not delete pages.js or the quran image folder. INSTALL.txt is for your reference only.
+4. In GitHub Desktop, enter a commit summary (Add Google sign-in and cloud sync), click Commit to main (or your publishing branch), then Push origin. Open https://muhammadnz143-ux.github.io/Quran/ after GitHub Pages publishes the commit. Refresh with Ctrl+F5 on a computer.
+5. Firebase Authentication > Sign-in method must show Google enabled. Authorized domain: muhammadnz143-ux.github.io. Firestore database (default) and the owner-only /users/{userId}/{document=**} rules must be published (already configured in the conversation).
+6. Click Account / Sign in on the website and sign in with your preferred Gmail. Wait for Account to say All records synced. If old records exist, click Import existing device records and confirm. This merges records by ID, retaining existing account records with the same ID. Import only your own guest records. Repeat on other devices if they have distinct old records; do not repeatedly import an old guest copy after deleting marks from the cloud.
+7. On a second device, sign in with the SAME Google account. Check that the mistakes and revision count match. Make a test mistake and save a note on device A, check device B, then delete it on device B and check device A. Test a quarter log and undo in the same way.
+
+Notes:
+- Imported Juz images stay on the device. Use the same built-in scans on each device for best marker alignment. Custom scan versions may be flagged for review even if the images look identical.
+- The account button reports whether cloud writes have been acknowledged. Local changes made while offline in an already loaded signed-in page are queued locally, then uploaded after connection returns. A fresh page load offline may not be able to load the Firebase SDK. This is not a full offline-installable app.
+- Guest records remain in local storage, separate from each account. Account caches and pending changes remain in this browser; avoid using a shared/public browser for private notes. Restoring a backup while signed in can replace cloud records across devices.
+- Different mistakes/revision events use separate Firestore documents. Concurrent changes to the same record are last-write-wins. Prefer a single tab per device, and wait for the sync status before moving to a different device for the same record.
+- Tested JavaScript syntax and mocked save/import/merge/delete/sign-out flows. Live Google authentication and live Firestore syncing must be verified after deployment; this package does not deploy or alter your Firebase console or GitHub repository by itself.
